@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <title>Мой дневник развития в Instagram</title>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=WX0dasEe5ZSfaf59RRAShmogCm30lKUuUzm5rnkyVGS9aAuJIFPHn8coObuy18I7GWfdD2VlQbljG2u5bZxQF471gLUtPGmybC6vkz4yqrbqcksgFOW1vlL-nUnkQkbbHk02YC1aGVIZrD3k-7XKGVVNwEUy7fTCelPb82_CcGRW4qsy3F2XD2fcDij3O1j0HzdHwKxnavpcC-QhZbxpALEgddj8kSlp6qMW2IeNKOHhWbX99zKSBco7pEsa-CI_5vzBI7ioh9fNwGer_zEmWQ" charset="UTF-8"></script><style>
+    :root {
+      --background: #f6efe3;
+      --surface: #ffffff;
+      --surface-soft: #f7f9f9;
+      --text: #222222;
+      --text-muted: #70757a;
+      --line: #e4e8e8;
+      --accent: #2bb7a9;
+      --accent-dark: #209d91;
+      --accent-soft: #e9f8f6;
+      --header-fill: #dff4f0;
+      --header-fill-deep: #d1ece7;
+      --danger: #c64b4b;
+      --radius: 10px;
+      --shadow: 0 8px 24px rgba(28, 52, 49, 0.06); }
+    * {
+      box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      line-height: 1.45; }
+
+    .yacht-section {
+      position: relative;
+      width: 100%;
+      min-height: clamp(300px, 31vw, 460px);
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 78% 25%, rgba(255, 255, 255, 0.44), transparent 18%),
+        linear-gradient(180deg, rgba(239, 236, 220, 0.20), rgba(225, 235, 221, 0.44));
+    }
+    .background-yacht-svg {
+      position: absolute;
+      left: 50%;
+      bottom: -3%;
+      width: min(100%, 1080px);
+      height: 100%;
+      transform: translateX(-50%);
+      opacity: 0.96;
+    }
+    button,
+    textarea,
+    input {
+      font: inherit; }
+    button {
+      border: 0;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent; }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 1800px);
+      margin: 0 auto;
+      padding: 40px 28px 56px; }
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px; }
+    .title-group {
+      min-width: 0; }
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      font-weight: 700;
+      font-style: italic; }
+    .subtitle {
+      margin: 10px 0 0;
+      color: var(--text-muted);
+      font-size: 15px; }
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 16px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+      user-select: none;
+      white-space: nowrap; }
+    .button:hover {
+      transform: translateY(-1px); }
+    .button:active {
+      transform: translateY(0); }
+    .button-primary,
+    #addWeekTopButton,
+    #addWeekBottomButton {
+      background: #2bb7a9;
+      color: #ffffff; }
+    .button-primary:hover,
+    #addWeekTopButton:hover,
+    #addWeekBottomButton:hover {
+      background: #209d91; }
+    .button-secondary {
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--line); }
+    .button-secondary:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft); }
+    .table-shell {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: var(--surface); }
+    table {
+      width: 100%;
+      min-width: 1540px;
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed; }
+    col.week-column {
+      width: 132px; }
+    col.skill-column {
+      width: 210px; }
+    col.counter-column {
+      width: 145px; }
+    col.stories-column {
+      width: 275px; }
+    col.notes-column {
+      width: 300px; }
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 15px 12px;
+      background: linear-gradient(180deg, var(--header-fill) 0%, var(--header-fill-deep) 100%);
+      color: #315957;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 650;
+      text-align: left;
+      vertical-align: middle; }
+    thead th:last-child {
+      border-right: 0; }
+    tbody tr {
+      transition: background-color 0.2s ease; }
+    tbody tr:hover {
+      background: #fbfdfd; }
+    tbody td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      vertical-align: top;
+      background: transparent; }
+    tbody tr:last-child td {
+      border-bottom: 0; }
+    tbody td:last-child {
+      border-right: 0; }
+    .week-cell {
+      display: flex;
+      min-height: 104px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px; }
+    .week-number {
+      font-size: 15px;
+      font-weight: 700; }
+    .week-dates {
+      color: var(--text-muted);
+      font-size: 13px;
+      white-space: nowrap; }
+    .delete-week-button {
+      align-self: flex-start;
+      margin-top: 8px;
+      padding: 4px 0;
+      background: transparent;
+      color: #9a6b67;
+      cursor: pointer;
+      font-size: 12px;
+      opacity: 0.72;
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease; }
+    .delete-week-button:hover {
+      color: var(--danger);
+      opacity: 1; }
+    .delete-week-button.is-confirming {
+      padding: 5px 8px;
+      border-radius: 6px;
+      background: #fff0ee;
+      color: var(--danger);
+      opacity: 1;
+      font-weight: 650; }
+    .delete-week-button:focus-visible {
+      outline: 2px solid rgba(198, 75, 75, 0.35);
+      outline-offset: 3px;
+      border-radius: 4px; }
+    .text-field {
+      display: block;
+      width: 100%;
+      min-height: 104px;
+      resize: none;
+      overflow: hidden;
+      padding: 10px 11px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      line-height: 1.45;
+      transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease; }
+    .text-field::placeholder {
+      color: #a4aaaa; }
+    .text-field:hover {
+      background: var(--surface-soft); }
+    .text-field:focus {
+      border-color: rgba(43, 183, 169, 0.55);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(43, 183, 169, 0.11); }
+    .counter {
+      display: grid;
+      grid-template-columns: 36px 1fr 36px;
+      align-items: center;
+      gap: 6px;
+      min-height: 104px; }
+    .counter-button {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--surface-soft);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease; }
+    .counter-button:hover {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      transform: scale(1.04); }
+    .counter-button:active {
+      transform: scale(0.98); }
+    .counter-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 38px;
+      color: var(--text);
+      font-size: 19px;
+      font-weight: 700;
+      text-align: center; }
+    .stories {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      min-height: 104px;
+      align-content: center; }
+    .story-day {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px; }
+    .story-label {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 650;
+      text-transform: lowercase; }
+    .story-checkbox {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none; }
+    .story-box {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border: 1px solid #cfd6d5;
+      border-radius: 7px;
+      background: #ffffff;
+      cursor: pointer;
+      color: transparent;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease; }
+    .story-box:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px); }
+    .story-checkbox:focus-visible + .story-box {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px; }
+    .story-checkbox:checked + .story-box {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 3px 9px rgba(43, 183, 169, 0.2); }
+    .story-box::after {
+      content: "✓";
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1; }
+    .year-countdown {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-top: 16px;
+      padding: 11px 15px;
+      border: 1px solid rgba(43, 183, 169, 0.28);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #49615f;
+      box-shadow: 0 5px 16px rgba(28, 52, 49, 0.04);
+      backdrop-filter: blur(4px); }
+    .year-countdown strong {
+      color: var(--accent-dark);
+      font-size: 18px;
+      font-weight: 750; }
+    .motivational-phrase {
+      width: 100%;
+      max-width: none;
+      margin: 16px 0 0;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      color: #4f6562;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(17px, 1.6vw, 22px);
+      font-style: italic;
+      line-height: 1.45;
+      letter-spacing: 0.01em; }
+    .motivational-phrase::-webkit-scrollbar {
+      display: none; }
+    .motivational-phrase::before {
+      content: "“";
+      color: var(--accent);
+      font-size: 1.35em;
+      line-height: 0; }
+    .motivational-phrase::after {
+      content: "”";
+      color: var(--accent);
+      font-size: 1.35em;
+      line-height: 0; }
+    .footer-actions {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 14px; }
+    .empty-message {
+      display: none;
+      padding: 34px;
+      color: var(--text-muted);
+      text-align: center; }
+    .print-title {
+      display: none; }
+    @media (max-width: 760px) {
+      body {
+        overflow-x: hidden; }
+      .page {
+        width: 100%;
+        padding-top: 20px;
+        padding-right: max(12px, env(safe-area-inset-right));
+        padding-bottom: calc(34px + env(safe-area-inset-bottom));
+        padding-left: max(12px, env(safe-area-inset-left)); }
+      .page-header {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 18px; }
+      h1 {
+        font-size: 28px;
+        line-height: 1.12; }
+      .subtitle {
+        max-width: 100%;
+        font-size: 14px; }
+      .header-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px; }
+      .header-actions .button {
+        width: 100%; }
+      .table-shell {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent; }
+      table {
+        display: block;
+        width: 100%;
+        min-width: 0; }
+      colgroup,
+      thead {
+        display: none; }
+      tbody {
+        display: grid;
+        width: 100%;
+        gap: 14px; }
+      tbody tr {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 7px 20px rgba(28, 52, 49, 0.06); }
+      tbody tr:hover {
+        background: rgba(255, 255, 255, 0.95); }
+      tbody td {
+        display: grid;
+        grid-template-columns: minmax(112px, 34%) minmax(0, 1fr);
+        align-items: start;
+        gap: 10px;
+        width: 100%;
+        padding: 11px 12px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line); }
+      tbody td:last-child {
+        border-bottom: 0; }
+      tbody td::before {
+        color: #41625f;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3; }
+      tbody td:nth-child(1)::before { content: "Неделя"; }
+      tbody td:nth-child(2)::before { content: "Главный навык"; }
+      tbody td:nth-child(3)::before { content: "Разговорный рилс"; }
+      tbody td:nth-child(4)::before { content: "Другие рилс"; }
+      tbody td:nth-child(5)::before { content: "Карусель"; }
+      tbody td:nth-child(6)::before { content: "Сторис"; }
+      tbody td:nth-child(7)::before { content: "Банк наблюдений"; }
+      tbody td:nth-child(8)::before { content: "Вывод недели"; }
+      .week-cell,
+      .counter,
+      .stories {
+        min-height: 0; }
+      .week-cell {
+        justify-content: flex-start;
+        align-items: flex-start; }
+      .delete-week-button {
+        width: 100%;
+        max-width: 150px; }
+      .text-field {
+        min-height: 78px;
+        padding: 8px 9px;
+        border: 1px solid #e2e8e7;
+        background: #ffffff; }
+      .counter {
+        width: min(100%, 180px);
+        grid-template-columns: 38px 1fr 38px; }
+      .counter-button {
+        width: 38px;
+        height: 38px; }
+      .stories {
+        width: 100%;
+        max-width: 300px;
+        gap: 5px; }
+      .story-box {
+        width: 26px;
+        height: 26px; }
+      .yacht-section {
+        min-height: 245px;
+        margin-top: 16px;
+        border-radius: 12px; }
+      .background-yacht-svg {
+        bottom: -2%;
+        width: 100%;
+        height: 100%; }
+      .year-countdown {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        flex-wrap: wrap;
+        margin-top: 14px; }
+      .motivational-phrase {
+        font-size: clamp(9.5px, 2.65vw, 15px);
+        line-height: 1.25; }
+      .footer-actions {
+        width: 100%; }
+      .footer-actions .button {
+        width: 100%; }
+    }
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 10mm; }
+      body {
+        background: #ffffff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact; }
+      .yacht-section {
+        display: none !important; }
+      .page {
+        width: 100%;
+        max-width: none;
+        padding: 0; }
+      .page-header,
+      .footer-actions {
+        display: none !important; }
+      .print-title {
+        display: block;
+        margin: 0 0 12px;
+        font-size: 22px;
+        font-weight: 700; }
+      .year-countdown {
+        margin-top: 8px;
+        padding: 6px 8px;
+        border-radius: 0;
+        box-shadow: none;
+        font-size: 9px; }
+      .year-countdown strong {
+        font-size: 11px; }
+      .table-shell {
+        overflow: visible;
+        border-radius: 0;
+        box-shadow: none; }
+      table {
+        min-width: 0;
+        width: 100%;
+        table-layout: fixed;
+        font-size: 8.4px; }
+      col.week-column {
+        width: 8%; }
+      col.skill-column {
+        width: 13%; }
+      col.counter-column {
+        width: 8%; }
+      col.stories-column {
+        width: 17%; }
+      col.notes-column {
+        width: 19%; }
+      thead th {
+        position: static;
+        padding: 6px 5px;
+        font-size: 8px; }
+      tbody tr {
+        break-inside: avoid; }
+      tbody td {
+        padding: 5px; }
+      .week-cell,
+      .counter,
+      .stories {
+        min-height: 58px; }
+      .week-number {
+        font-size: 9px; }
+      .week-dates,
+      .story-label {
+        font-size: 7px; }
+      .text-field {
+        min-height: 58px;
+        padding: 4px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        font-size: 8px;
+        box-shadow: none; }
+      .counter {
+        grid-template-columns: 1fr; }
+      .counter-button,
+      .delete-week-button {
+        display: none; }
+      .counter-value {
+        font-size: 13px; }
+      .stories {
+        gap: 3px; }
+      .story-day {
+        gap: 4px; }
+      .story-box {
+        width: 15px;
+        height: 15px;
+        border-radius: 3px; }
+      .story-box::after {
+        font-size: 10px; } }
+  </style>
+</head>
+<body>
+
+  <main class="page">
+    <header class="page-header">
+      <div class="title-group">
+        <h1>Мой дневник развития в Instagram</h1>
+        <p class="subtitle">
+          Еженедельный трекер развития навыков создания контента
+        </p>
+      </div>
+      <div class="header-actions">
+        <button
+          class="button button-secondary"
+          id="exportButton"
+          type="button"
+        >
+          Экспорт в PDF
+        </button>
+        <button
+          class="button button-primary"
+          id="addWeekTopButton"
+          type="button"
+        >
+          + Добавить неделю
+        </button>
+      </div>
+    </header>
+    <h2 class="print-title">Мой дневник развития в Instagram</h2>
+    <section class="table-shell" aria-label="Мой дневник развития в Instagram">
+      <table>
+        <colgroup>
+          <col class="week-column">
+          <col class="skill-column">
+          <col class="counter-column">
+          <col class="counter-column">
+          <col class="counter-column">
+          <col class="stories-column">
+          <col class="notes-column">
+          <col class="notes-column">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Неделя</th>
+            <th>Главный навык</th>
+            <th>Разговорный рилс</th>
+            <th>Другие рилс</th>
+            <th>Карусель</th>
+            <th>Сторис</th>
+            <th>Банк наблюдений</th>
+            <th>Вывод недели</th>
+          </tr>
+        </thead>
+        <tbody id="weeksBody"></tbody>
+      </table>
+      <div class="empty-message" id="emptyMessage">
+        Добавьте первую неделю, чтобы начать дневник.
+      </div>
+    </section>
+
+    <div class="year-countdown" id="yearCountdown" aria-live="polite"></div>
+    <p class="motivational-phrase">
+      Я не доказываю, что умею. Я исследую, каким автором могу стать
+    </p>
+    <div class="footer-actions">
+      <button
+        class="button button-primary"
+        id="addWeekBottomButton"
+        type="button"
+      >
+        + Добавить неделю
+      </button>
+    </div>
+  <div class="yacht-section" aria-hidden="true">
+    <svg class="background-yacht-svg" viewBox="350 130 650 560" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M118 626 C 278 594, 442 603, 596 630 C 766 660, 948 657, 1148 618" stroke-width="10" stroke-opacity="0.70"/>
+        <path d="M174 658 C 344 632, 526 640, 714 664 C 870 684, 1016 678, 1160 650" stroke-width="6" stroke-opacity="0.48"/>
+        <path d="M654 202 L 654 506" stroke-width="9" stroke-opacity="0.96"/>
+        <path d="M648 222 L 470 454 L 648 454 Z" fill="#ffffff" fill-opacity="0.82" stroke-width="5" stroke-opacity="0.96"/>
+        <path d="M672 244 L 672 446 L 830 380 Z" fill="#ffffff" fill-opacity="0.66" stroke-width="5" stroke-opacity="0.92"/>
+        <path d="M516 510 C 610 490, 754 492, 852 524 C 818 566, 574 570, 516 510 Z" fill="#ffffff" fill-opacity="0.90" stroke-width="5" stroke-opacity="0.96"/>
+        <path d="M566 488 C 638 478, 750 482, 808 496" stroke-width="7" stroke-opacity="0.92"/>
+        <path d="M650 508 L 592 554" stroke-width="5" stroke-opacity="0.82"/>
+        <path d="M622 506 L 602 552" stroke-width="4" stroke-opacity="0.58"/>
+      </g>
+      <circle cx="1012" cy="164" r="56" fill="#ffffff" fill-opacity="0.32"/>
+    </svg>
+  </div>
+  </main>
+  <script>
+    "use strict";
+    const STORAGE_KEY = "authorGrowthJournal_v1";
+    const STORY_DAYS = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
+    let journalData = loadData();
+    const weeksBody = document.getElementById("weeksBody");
+    const emptyMessage = document.getElementById("emptyMessage");
+    const addWeekTopButton = document.getElementById("addWeekTopButton");
+    const addWeekBottomButton = document.getElementById("addWeekBottomButton");
+    const exportButton = document.getElementById("exportButton");
+    const yearCountdown = document.getElementById("yearCountdown");
+    function createId() {
+      if (window.crypto && typeof window.crypto.randomUUID === "function") {
+        return window.crypto.randomUUID();
+      }
+      return `week-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    }
+    function getCurrentMonday() {
+      const today = new Date();
+      const day = today.getDay();
+      const daysFromMonday = day === 0 ? 6 : day - 1;
+      const monday = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate()
+      );
+      monday.setDate(monday.getDate() - daysFromMonday);
+      monday.setHours(0, 0, 0, 0);
+      return monday;
+    }
+    function dateToStorageString(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+    function storageStringToDate(dateString) {
+      const [year, month, day] = dateString.split("-").map(Number);
+      return new Date(year, month - 1, day);
+    }
+    function addDays(date, numberOfDays) {
+      const result = new Date(date);
+      result.setDate(result.getDate() + numberOfDays);
+      return result;
+    }
+    function formatShortDate(date) {
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      return `${day}.${month}`;
+    }
+    function formatWeekRange(startDateString) {
+      const startDate = storageStringToDate(startDateString);
+      const endDate = addDays(startDate, 6);
+      if (startDate.getFullYear() === endDate.getFullYear()) {
+        return `${formatShortDate(startDate)}–${formatShortDate(endDate)}`;
+      }
+      return (
+        `${formatShortDate(startDate)}.${startDate.getFullYear()}–` +
+        `${formatShortDate(endDate)}.${endDate.getFullYear()}`
+      );
+    }
+    function createEmptyWeek(startDateString) {
+      return {
+        id: createId(),
+        startDate: startDateString,
+        mainSkill: "",
+        talkingReels: 0,
+        otherReels: 0,
+        carousels: 0,
+        stories: [false, false, false, false, false, false, false],
+        observationBank: "",
+        weekConclusion: ""
+      };
+    }
+    function createDefaultData() {
+      const firstMonday = getCurrentMonday();
+      return {
+        firstWeekStart: dateToStorageString(firstMonday),
+        weeks: [createEmptyWeek(dateToStorageString(firstMonday))]
+      };
+    }
+    function normalizeData(rawData) {
+      if (!rawData || typeof rawData !== "object") {
+        return createDefaultData();
+      }
+      if (!Array.isArray(rawData.weeks) || rawData.weeks.length === 0) {
+        return createDefaultData();
+      }
+      const normalizedWeeks = rawData.weeks.map((week, index) => {
+        const fallbackStart = addDays(
+          storageStringToDate(
+            rawData.firstWeekStart || dateToStorageString(getCurrentMonday())
+          ),
+          index * 7
+        );
+        return {
+          id: typeof week.id === "string" ? week.id : createId(),
+          startDate:
+            typeof week.startDate === "string"
+              ? week.startDate
+              : dateToStorageString(fallbackStart),
+          mainSkill:
+            typeof week.mainSkill === "string" ? week.mainSkill : "",
+          talkingReels:
+            Number.isFinite(Number(week.talkingReels))
+              ? Math.max(0, Number(week.talkingReels))
+              : 0,
+          otherReels:
+            Number.isFinite(Number(week.otherReels))
+              ? Math.max(0, Number(week.otherReels))
+              : 0,
+          carousels:
+            Number.isFinite(Number(week.carousels))
+              ? Math.max(0, Number(week.carousels))
+              : 0,
+          stories: Array.isArray(week.stories)
+            ? STORY_DAYS.map((_, dayIndex) => Boolean(week.stories[dayIndex]))
+            : [false, false, false, false, false, false, false],
+          observationBank:
+            typeof week.observationBank === "string"
+              ? week.observationBank
+              : "",
+          weekConclusion:
+            typeof week.weekConclusion === "string"
+              ? week.weekConclusion
+              : ""
+        };
+      });
+      return {
+        firstWeekStart:
+          typeof rawData.firstWeekStart === "string"
+            ? rawData.firstWeekStart
+            : normalizedWeeks[0].startDate,
+        weeks: normalizedWeeks
+      };
+    }
+    function loadData() {
+      try {
+        const savedValue = localStorage.getItem(STORAGE_KEY);
+        if (!savedValue) {
+          return createDefaultData();
+        }
+        return normalizeData(JSON.parse(savedValue));
+      } catch (error) {
+        console.warn("Не удалось загрузить сохранённые данные:", error);
+        return createDefaultData();
+      }
+    }
+    function saveData() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(journalData));
+      } catch (error) {
+        console.warn("Не удалось сохранить данные:", error);
+      }
+    }
+    function findWeek(weekId) {
+      return journalData.weeks.find((week) => week.id === weekId);
+    }
+    function autoResizeTextarea(textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${Math.max(textarea.scrollHeight, 104)}px`;
+    }
+    function createTextarea({
+      week,
+      fieldName,
+      placeholder,
+      accessibleLabel
+    }) {
+      const textarea = document.createElement("textarea");
+      textarea.className = "text-field";
+      textarea.value = week[fieldName];
+      textarea.placeholder = placeholder;
+      textarea.setAttribute("aria-label", accessibleLabel);
+      textarea.addEventListener("input", () => {
+        week[fieldName] = textarea.value;
+        autoResizeTextarea(textarea);
+        saveData();
+      });
+      requestAnimationFrame(() => autoResizeTextarea(textarea));
+      return textarea;
+    }
+    function updateCounter(weekId, fieldName, amount) {
+      const week = findWeek(weekId);
+      if (!week) {
+        return;
+      }
+      const currentValue = Number(week[fieldName]) || 0;
+      week[fieldName] = Math.max(0, currentValue + amount);
+      saveData();
+      renderWeeks();
+    }
+    function createCounter(week, fieldName, accessibleLabel) {
+      const counter = document.createElement("div");
+      counter.className = "counter";
+      const decreaseButton = document.createElement("button");
+      decreaseButton.className = "counter-button";
+      decreaseButton.type = "button";
+      decreaseButton.textContent = "←";
+      decreaseButton.setAttribute(
+        "aria-label",
+        `Уменьшить: ${accessibleLabel}`
+      );
+      decreaseButton.addEventListener("click", () => {
+        updateCounter(week.id, fieldName, -1);
+      });
+      const value = document.createElement("div");
+      value.className = "counter-value";
+      value.textContent = String(week[fieldName]);
+      value.setAttribute("aria-live", "polite");
+      const increaseButton = document.createElement("button");
+      increaseButton.className = "counter-button";
+      increaseButton.type = "button";
+      increaseButton.textContent = "→";
+      increaseButton.setAttribute(
+        "aria-label",
+        `Увеличить: ${accessibleLabel}`
+      );
+      increaseButton.addEventListener("click", () => {
+        updateCounter(week.id, fieldName, 1);
+      });
+      counter.append(decreaseButton, value, increaseButton);
+      return counter;
+    }
+    function createStories(week, weekNumber) {
+      const stories = document.createElement("div");
+      stories.className = "stories";
+      STORY_DAYS.forEach((dayName, dayIndex) => {
+        const storyDay = document.createElement("label");
+        storyDay.className = "story-day";
+        const label = document.createElement("span");
+        label.className = "story-label";
+        label.textContent = dayName;
+        const checkbox = document.createElement("input");
+        checkbox.className = "story-checkbox";
+        checkbox.type = "checkbox";
+        checkbox.checked = Boolean(week.stories[dayIndex]);
+        checkbox.setAttribute(
+          "aria-label",
+          `Сторис: ${dayName}, неделя ${weekNumber}`
+        );
+        const box = document.createElement("span");
+        box.className = "story-box";
+        box.setAttribute("aria-hidden", "true");
+        checkbox.addEventListener("change", () => {
+          week.stories[dayIndex] = checkbox.checked;
+          saveData();
+        });
+        storyDay.append(label, checkbox, box);
+        stories.append(storyDay);
+      });
+      return stories;
+    }
+    function createWeekRow(week, index) {
+      const row = document.createElement("tr");
+      row.dataset.weekId = week.id;
+      const weekCell = document.createElement("td");
+      const weekBlock = document.createElement("div");
+      weekBlock.className = "week-cell";
+      const weekNumber = document.createElement("div");
+      weekNumber.className = "week-number";
+      weekNumber.textContent = `Неделя ${index + 1}`;
+      const weekDates = document.createElement("div");
+      weekDates.className = "week-dates";
+      weekDates.textContent = formatWeekRange(week.startDate);
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "delete-week-button";
+      deleteButton.type = "button";
+      deleteButton.textContent = "Удалить неделю";
+      deleteButton.setAttribute(
+        "aria-label",
+        `Удалить неделю ${index + 1}`
+      );
+      deleteButton.dataset.weekId = week.id;
+      deleteButton.dataset.weekNumber = String(index + 1);
+      deleteButton.dataset.confirming = "false";
+      weekBlock.append(weekNumber, weekDates, deleteButton);
+      weekCell.append(weekBlock);
+      const skillCell = document.createElement("td");
+      skillCell.append(
+        createTextarea({
+          week,
+          fieldName: "mainSkill",
+          placeholder: "Например: говорить свободнее и увереннее",
+          accessibleLabel: `Главный навык, неделя ${index + 1}`
+        })
+      );
+      const talkingReelsCell = document.createElement("td");
+      talkingReelsCell.append(
+        createCounter(
+          week,
+          "talkingReels",
+          `Разговорный рилс, неделя ${index + 1}`
+        )
+      );
+      const otherReelsCell = document.createElement("td");
+      otherReelsCell.append(
+        createCounter(
+          week,
+          "otherReels",
+          `Другие рилс, неделя ${index + 1}`
+        )
+      );
+      const carouselsCell = document.createElement("td");
+      carouselsCell.append(
+        createCounter(
+          week,
+          "carousels",
+          `Карусель, неделя ${index + 1}`
+        )
+      );
+      const storiesCell = document.createElement("td");
+      storiesCell.append(createStories(week, index + 1));
+      const observationsCell = document.createElement("td");
+      observationsCell.append(
+        createTextarea({
+          week,
+          fieldName: "observationBank",
+          placeholder: "Мысли, идеи, наблюдения...",
+          accessibleLabel: `Банк наблюдений, неделя ${index + 1}`
+        })
+      );
+      const conclusionCell = document.createElement("td");
+      conclusionCell.append(
+        createTextarea({
+          week,
+          fieldName: "weekConclusion",
+          placeholder: "Что получилось и что стало понятнее?",
+          accessibleLabel: `Вывод недели, неделя ${index + 1}`
+        })
+      );
+      row.append(
+        weekCell,
+        skillCell,
+        talkingReelsCell,
+        otherReelsCell,
+        carouselsCell,
+        storiesCell,
+        observationsCell,
+        conclusionCell
+      );
+      return row;
+    }
+    function recalculateWeekDates() {
+      const firstWeekDate = storageStringToDate(journalData.firstWeekStart);
+      journalData.weeks.forEach((week, index) => {
+        week.startDate = dateToStorageString(addDays(firstWeekDate, index * 7));
+      });
+    }
+    function deleteWeek(weekId) {
+      const previousLength = journalData.weeks.length;
+      journalData.weeks = journalData.weeks.filter(
+        (week) => week.id !== weekId
+      );
+      if (journalData.weeks.length === previousLength) {
+        return;
+      }
+      recalculateWeekDates();
+      saveData();
+      renderWeeks();
+    }
+    function handleDeleteButton(button) {
+      const weekId = button.dataset.weekId;
+      if (!weekId) {
+        return;
+      }
+      if (button.dataset.confirming === "true") {
+        deleteWeek(weekId);
+        return;
+      }
+      button.dataset.confirming = "true";
+      button.classList.add("is-confirming");
+      button.textContent = "Нажмите ещё раз";
+      button.setAttribute("aria-label", "Подтвердить удаление недели");
+      window.setTimeout(() => {
+        if (!button.isConnected) {
+          return;
+        }
+        button.dataset.confirming = "false";
+        button.classList.remove("is-confirming");
+        button.textContent = "Удалить неделю";
+        button.setAttribute(
+          "aria-label",
+          `Удалить неделю ${button.dataset.weekNumber || ""}`.trim()
+        );
+      }, 4000);
+    }
+    function getWeekWord(number) {
+      const lastTwoDigits = number % 100;
+      const lastDigit = number % 10;
+      if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+        return "недель";
+      }
+      if (lastDigit === 1) {
+        return "неделя";
+      }
+      if (lastDigit >= 2 && lastDigit <= 4) {
+        return "недели";
+      }
+      return "недель";
+    }
+    function updateYearCountdown() {
+      const lastWeek = journalData.weeks[journalData.weeks.length - 1];
+      const referenceDate = lastWeek
+        ? storageStringToDate(lastWeek.startDate)
+        : getCurrentMonday();
+      const startOfNextYear = new Date(referenceDate.getFullYear() + 1, 0, 1);
+      const millisecondsPerWeek = 7 * 24 * 60 * 60 * 1000;
+      const remainingWeeks = Math.max(
+        0,
+        Math.ceil((startOfNextYear - referenceDate) / millisecondsPerWeek)
+      );
+      yearCountdown.innerHTML =
+        `До конца года осталось <strong>${remainingWeeks}</strong> ` +
+        `${getWeekWord(remainingWeeks)}.`;
+    }
+    function renderWeeks() {
+      weeksBody.innerHTML = "";
+      journalData.weeks.forEach((week, index) => {
+        weeksBody.append(createWeekRow(week, index));
+      });
+      emptyMessage.style.display =
+        journalData.weeks.length === 0 ? "block" : "none";
+      updateYearCountdown();
+    }
+    function createWeek() {
+      const lastWeek = journalData.weeks[journalData.weeks.length - 1];
+      const nextStartDate = lastWeek
+        ? addDays(storageStringToDate(lastWeek.startDate), 7)
+        : storageStringToDate(journalData.firstWeekStart);
+      const newWeek = createEmptyWeek(dateToStorageString(nextStartDate));
+      journalData.weeks.push(newWeek);
+      recalculateWeekDates();
+      saveData();
+      renderWeeks();
+      requestAnimationFrame(() => {
+        const newRow = weeksBody.querySelector(
+          `[data-week-id="${newWeek.id}"]`
+        );
+        if (newRow) {
+          newRow.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+        }
+      });
+    }
+    function exportPDF() {
+      document.querySelectorAll(".text-field").forEach((textarea) => {
+        autoResizeTextarea(textarea);
+      });
+      window.print();
+    }
+    function findDeleteButton(target) {
+      let currentElement = target;
+      while (currentElement && currentElement !== weeksBody) {
+        if (
+          currentElement.classList &&
+          currentElement.classList.contains("delete-week-button")
+        ) {
+          return currentElement;
+        }
+        currentElement = currentElement.parentElement;
+      }
+      return null;
+    }
+    weeksBody.addEventListener("click", (event) => {
+      const deleteButton = findDeleteButton(event.target);
+      if (!deleteButton) {
+        return;
+      }
+      handleDeleteButton(deleteButton);
+    });
+    addWeekTopButton.addEventListener("click", createWeek);
+    addWeekBottomButton.addEventListener("click", createWeek);
+    exportButton.addEventListener("click", exportPDF);
+    renderWeeks();
+  </script>
+</body>
+</html>
